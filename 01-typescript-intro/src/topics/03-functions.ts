@@ -17,19 +17,40 @@ function multiply(firstNumber: number, secondNumber?: number, base: number = 2) 
 
 
 
+// const result: number = addNumbers(1, 2);
+// const result2: string = addNumbersArrow(1, 2);
+// const resultMultiply: number = multiply(5);
 
 
+// console.log({ result, result2, resultMultiply });
+
+interface Character {
+  name: string;
+  hp: number;
+  showHp: () => number;
+}
+
+const healCharacter = (character: Character, amount: number) => {
+
+  character.hp += amount;
+
+}
+
+const strider: Character = {
+  name: 'Strider',
+  hp: 50,
+  showHp() {
+    console.log(`Puntos de vida ${this.hp}`);
+  }
+}
 
 
-const result: number = addNumbers(1, 2);
-const result2: string = addNumbersArrow(1, 2);
-const resultMultiply: number = multiply(5);
+healCharacter(strider, 10);
+
+healCharacter(strider, 50);
 
 
-console.log({ result });
-console.log({ result2 });
-console.log({ resultMultiply });
-
+strider.showHp();
 
 
 export { }
